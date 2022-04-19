@@ -1,0 +1,16 @@
+## 기능 목록
+* rc-1 주어진 입력으로 경주할 자동차를 생성한다.
+  * 이름은 쉼표(,) 기준으로 구분
+  * 이름은 5자 이하만 가능
+  * 잘못된 입력인 경우, IllegalArgumentException를 발생
+* rc-2 주어진 횟수 동안 n대의 자동차를 전진 또는 멈출 수 있다.
+  * 전진 조건: random 값이 4~9
+  * 멈추는 조건: random 값이 0~3
+  * Random 값 추출은 camp.nextstep.edu.missionutils.Randoms의 pickNumberInRange()를 활용
+  * 잘못된 입력인 경우, IllegalArgumentException를 발생
+* rc-3 자동차 경주 게임의 우승자를 판별한다.
+  * 가장 멀리간 자동차가 우승
+  * 우승자가 한명 이상일 수 있음
+* 사용자로부터 입력을 받고, 게임 결과를 출력할 수 있다.
+  * 사용자가 잘못된 값을 입력할 경우, "[ERROR]"로 시작하는 에러 메시지를 출력
+  * "[ERROR]"로 시작하는 에러 메시지를 출력 후 그 부분부터 입력을 다시 받는다.
