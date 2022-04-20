@@ -13,7 +13,7 @@ import racingcar.domain.RacingCars;
 
 @AllArgsConstructor
 public class CreateRacingCarService implements CreateRacingCarUsecase {
-    final SaveRacingCarPort saveRacingCarPort;
+    private final SaveRacingCarPort saveRacingCarPort;
 
     @Override
     public void create(CreateRacingCarCommand command) {
