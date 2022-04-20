@@ -19,7 +19,7 @@ class RacingCarsTest {
         RacingCars racingCars1 = RacingCars.newInstance(racingCars);
 
         for (int i = 0; i < carList.size(); i++) {
-            assertEquals(racingCars.getRacingCars().get(i), racingCars1.getRacingCars().get(i));
+            assertEquals(racingCars.getSortedRacingCars().get(i), racingCars1.getSortedRacingCars().get(i));
         }
     }
 }

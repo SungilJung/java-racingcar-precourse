@@ -1,16 +1,19 @@
 package racingcar.domain;
 
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @EqualsAndHashCode
-public class RacingCar {
+public class RacingCar implements Comparable<RacingCar> {
     @NonNull
-    private final RacingCarName name;
+    @Getter
+    private final RacingCarName racingCarName;
 
     @EqualsAndHashCode.Exclude
+    @Getter
     private int moveCount = 0;
 
     public void move() {
@@ -19,7 +22,7 @@ public class RacingCar {
 
     @Override
     public String toString() {
-        return name.getName() + " : " + toStringOfMoveCount();
+        return racingCarName.getName() + " : " + toStringOfMoveCount();
     }
 
     private String toStringOfMoveCount() {
@@ -32,9 +35,20 @@ public class RacingCar {
     }
 
     public static RacingCar newInstance(RacingCar car) {
-        RacingCar newInstance = new RacingCar(car.name);
+        RacingCar newInstance = new RacingCar(car.racingCarName);
         newInstance.moveCount = car.moveCount;
         return newInstance;
 
+    }
+
+    @Override
+    public int compareTo(RacingCar o) {
+        int value = Integer.compare(o.moveCount, this.moveCount);
+
+        if (value == 0) {
+            value = this.racingCarName.getName().compareTo(o.racingCarName.getName());
+        }
+
+        return value;
     }
 }

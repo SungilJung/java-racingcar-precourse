@@ -26,7 +26,7 @@ class RacingCarAdapterTest {
         RacingCarAdapter adapter = new RacingCarAdapter();
         adapter.save(expectedData);
 
-        assertEquals(2, adapter.getRacingCars().getRacingCars().size());
+        assertEquals(2, adapter.getRacingCars().getSortedRacingCars().size());
     }
 
 }

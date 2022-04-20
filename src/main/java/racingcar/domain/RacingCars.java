@@ -12,14 +12,15 @@ public class RacingCars {
     @NonNull
     private final List<RacingCar> racingCarList;
 
-    public List<RacingCar> getRacingCars() {
+    public List<RacingCar> getSortedRacingCars() {
+        Collections.sort(racingCarList);
         return Collections.unmodifiableList(racingCarList);
     }
 
     public static RacingCars newInstance(RacingCars cars) {
         List<RacingCar> newRacingCarList = new ArrayList<>();
 
-        for (RacingCar car : cars.getRacingCars()) {
+        for (RacingCar car : cars.getSortedRacingCars()) {
             newRacingCarList.add(RacingCar.newInstance(car));
         }
 
