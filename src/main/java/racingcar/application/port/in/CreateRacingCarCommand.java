@@ -10,7 +10,7 @@ import racingcar.util.SelfValidating;
 public class CreateRacingCarCommand extends SelfValidating<CreateRacingCarCommand> {
 
     @RacingCarNameCheck
-    final String input;
+    private final String input;
 
     public CreateRacingCarCommand(String input) {
         this.input = input;
@@ -21,7 +21,7 @@ public class CreateRacingCarCommand extends SelfValidating<CreateRacingCarComman
         String[] splitInput = input.split(",");
         List<RacingCarName> carNameList = new ArrayList<>();
 
-        for(String name: splitInput) {
+        for (String name : splitInput) {
             carNameList.add(new RacingCarName(name));
         }
 

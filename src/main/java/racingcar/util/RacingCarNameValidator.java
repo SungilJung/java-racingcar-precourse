@@ -1,5 +1,7 @@
 package racingcar.util;
 
+import java.util.HashSet;
+import java.util.Set;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import org.apache.commons.lang3.StringUtils;
@@ -10,7 +12,7 @@ public class RacingCarNameValidator implements ConstraintValidator<RacingCarName
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
 
-        if (value.isEmpty() || value.startsWith(",")|| value.endsWith(",")) {
+        if (value.isEmpty() || value.startsWith(",") || value.endsWith(",")) {
             return false;
         }
 
@@ -18,12 +20,14 @@ public class RacingCarNameValidator implements ConstraintValidator<RacingCarName
     }
 
     private boolean checkInput(String input) {
+        Set<String> nameSet = new HashSet<>();
+
         String[] names = input.split(",");
         boolean isValidName;
         int index = 0;
 
         do {
-            isValidName = checkName(names[index]);
+            isValidName = checkName(names[index]) && nameSet.add(names[index]);
             index++;
         } while (isValidName && index < names.length);
 
