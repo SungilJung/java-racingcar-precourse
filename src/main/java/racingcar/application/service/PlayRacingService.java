@@ -33,7 +33,7 @@ public class PlayRacingService implements PlayRacingUsecase {
     private RoundResult startRacing(int roundNum) {
         RacingCars racingCars = getRacingCarPort.getRacingCars();
 
-        for (RacingCar car : racingCars.getRacingCars()) {
+        for (RacingCar car : racingCars.getSortedRacingCars()) {
             moveCar(car);
         }
 

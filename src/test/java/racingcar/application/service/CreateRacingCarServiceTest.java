@@ -17,7 +17,7 @@ class CreateRacingCarServiceTest {
 
         createRacingCarUsecase.create(new CreateRacingCarCommand(input));
 
-        assertFalse(adapter.getRacingCars().getRacingCars().isEmpty());
+        assertFalse(adapter.getRacingCars().getSortedRacingCars().isEmpty());
 
     }
 
