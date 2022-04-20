@@ -6,7 +6,7 @@ import racingcar.application.port.out.SaveRacingCarPort;
 import racingcar.domain.RacingCars;
 
 public class RacingCarAdapter implements SaveRacingCarPort, GetRacingCarPort {
-    RacingCars racingCars = new RacingCars(new ArrayList<>());
+    private RacingCars racingCars = new RacingCars(new ArrayList<>());
 
     @Override
     public void save(RacingCars racingCars) {

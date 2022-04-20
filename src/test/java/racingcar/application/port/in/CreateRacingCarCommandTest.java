@@ -14,7 +14,7 @@ import racingcar.domain.RacingCarNames;
 class CreateRacingCarCommandTest {
 
     @ParameterizedTest
-    @ValueSource(strings = {"", "a,b,", "abcdef,ac", "ab,abcdefg"})
+    @ValueSource(strings = {"", "a,b,", "abcdef,ac", "ab,abcdefg", "a,a"})
     void 예외_테스트(String input) {
         assertThatIllegalArgumentException().isThrownBy(() -> new CreateRacingCarCommand(input));
     }
