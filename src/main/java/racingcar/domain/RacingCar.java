@@ -43,7 +43,7 @@ public class RacingCar implements Comparable<RacingCar> {
 
     @Override
     public int compareTo(RacingCar o) {
-        int value = Integer.compare(o.moveCount,this.moveCount);
+        int value = Integer.compare(o.moveCount, this.moveCount);
 
         if (value == 0) {
             value = this.racingCarName.getName().compareTo(o.racingCarName.getName());
