@@ -19,16 +19,23 @@ public class RacingCarConsole {
         boolean isValid;
 
         do {
-            try {
-                callback.accept(Console.readLine());
-                isValid = true;
-            } catch (IllegalArgumentException e) {
-                System.out.println(errorMessage);
-                isValid = false;
-
-            }
+            isValid = accept(callback);
         } while (!isValid);
 
+    }
+
+    private boolean accept(Consumer<String> callback) {
+        boolean isValid;
+
+        try {
+            callback.accept(Console.readLine());
+            isValid = true;
+        } catch (IllegalArgumentException e) {
+            System.out.println(errorMessage);
+            isValid = false;
+
+        }
+        return isValid;
     }
 
     public void print() {
