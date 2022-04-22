@@ -37,7 +37,7 @@ public class PlayRacingService implements PlayRacingUsecase {
             moveCar(car);
         }
 
-        return new RoundResult(roundNum, racingCars);
+        return new RoundResult(roundNum, RacingCars.newInstance(racingCars));
     }
 
     private void moveCar(RacingCar car) {
