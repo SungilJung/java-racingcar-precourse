@@ -32,7 +32,7 @@ public class MainPage implements Page {
         });
 
         System.out.print(getRoundResultMessage(racingResult[0]));
-        System.out.print("최종 우승자는 " + getWinnerMessage(racingResult[0]) + " 입니다.");
+        System.out.print("최종 우승자: " + getWinnerMessage(racingResult[0]));
 
     }
 
